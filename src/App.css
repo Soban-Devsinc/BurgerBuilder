@@ -8,11 +8,3 @@
 .bottom-bun {
   transform: rotate(180deg);
 }
-.BurgerBuilder2 {
-  text-align: center;
-
-}
-.container {
-  display: flex;
-  justify-content: center;
-}

@@ -65,21 +65,19 @@ function App() {
   };
 
   return (
-
-    <div className='container'>
-
+      <>
       <div className='BurgerBuilder'>
         <h1>Welcome to Burger Builder</h1>
         <p className='Cost'><strong>Current Cost: </strong> ${cost} </p>
         {renderButtons()}
       </div>
-      <div className='BurgerBuilder2'>
+      <hr></hr>
+      <div className='BurgerBuilder'>
         <img src={breadbun} alt='topbun' height={200} width={200}></img> <br></br>
         {renderPhoto()}
         <img src={breadbun} alt='bottombun' className='bottom-bun' height={200} width={200}></img>
       </div>
-
-    </div>
+      </>
   );
 }
 
