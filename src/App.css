@@ -1,10 +1,18 @@
 .BurgerBuilder {
   text-align: center;
+  margin-right: 100px;
 }
 .Cost {
-  text-align: center;
   font-size: 25px;
 }
 .bottom-bun {
   transform: rotate(180deg);
+}
+.BurgerBuilder2 {
+  text-align: center;
+
+}
+.container {
+  display: flex;
+  justify-content: center;
 }
