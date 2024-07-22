@@ -7,7 +7,7 @@ import cheese from './burgerimages/cheese.svg'
 import meat from './burgerimages/meat.svg'
 
 function App() {
-  // VegData
+
   const [vegData, setVegData] = useState([
     { name: 'Salad', cost: 2, count: 0 , img: salad},
     { name: 'Bacon', cost: 3, count: 0 , img: bacon},
@@ -15,30 +15,24 @@ function App() {
     { name: 'Meat', cost: 5, count: 0 , img : meat}
   ]);
 
-  // Use state for cost
   const [cost, setCost] = useState(4);
 
-  // Increment Cost and Count Function
   const incrementCost = (index) => {
     const newVegData = [...vegData];
     newVegData[index].count += 1;
     setVegData(newVegData);
     setCost(cost + newVegData[index].cost);
-    console.log(newVegData)
   };
 
-  // Decrement Cost and Count Function
   const decrementCost = (index) => {
     const newVegData = [...vegData];
     if (newVegData[index].count > 0) {
       newVegData[index].count -= 1;
       setVegData(newVegData);
       setCost(cost - newVegData[index].cost);
-      console.log(newVegData)
     }
   };
 
-  // Rendering buttons
   const renderButtons = () => {
     return vegData.map((item, index) => (
       <>
@@ -52,14 +46,13 @@ function App() {
     ));
   };
 
-  // Rendering Photo
   const renderPhoto = () => {
-    return vegData.map((item, index) =>
+    return vegData.map((item) =>
       Array(item.count).fill(null).map((_, i) => (
-        <div key={`${index}-${i}`}>
-          <img src={item.img} alt={item.name} />
-          <br />
-        </div>
+          <>
+            <img src={item.img} alt={item.name} />
+            <br />
+          </>
       ))
     );
   };
@@ -74,9 +67,10 @@ function App() {
       <hr></hr>
       <div className='BurgerBuilder'>
         <img src={breadbun} alt='topbun' height={200} width={200}></img> <br></br>
-        {renderPhoto()}
+        {renderPhoto}
         <img src={breadbun} alt='bottombun' className='bottom-bun' height={200} width={200}></img>
       </div>
+
       </>
   );
 }
